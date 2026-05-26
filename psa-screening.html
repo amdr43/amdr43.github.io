@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSA Screening — Dr. Adam Daily, MD</title>
+  <meta name="description" content="Patient education resources on PSA Screening from Dr. Adam Daily, MD, Board Certified Urologist at Virginia Mason Franciscan Health, Seattle, WA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-dark:   #0d2d52;
+      --blue-mid:    #1a4f8a;
+      --blue-bright: #2271c3;
+      --blue-light:  #e8f1fb;
+      --blue-pale:   #f4f8fd;
+      --accent:      #2271c3;
+      --text-main:   #0f1f33;
+      --text-body:   #3a4d62;
+      --text-muted:  #6b7f96;
+      --white:       #ffffff;
+      --border:      #dce8f5;
+      --green-bg:    #f0faf4;
+      --green-border:#b8e0c9;
+      --green-text:  #1a6b3a;
+      --amber-bg:    #fffbf0;
+      --amber-border:#f5dfa0;
+      --amber-text:  #7a5800;
+      --red-bg:      #fff5f5;
+      --red-border:  #f5c0c0;
+      --red-text:    #9b1c1c;
+      --radius:      10px;
+      --radius-lg:   16px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-main);
+      background: #f7f9fc;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--blue-dark);
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      height: 58px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-back {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      font-size: 14px; transition: color 0.2s;
+    }
+    .header-back:hover { color: var(--white); }
+    .header-phone {
+      font-size: 13px; color: rgba(255,255,255,0.65);
+      display: flex; align-items: center; gap: 6px;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .header-phone:hover { color: var(--white); }
+
+    /* ── HERO STRIP ── */
+    .condition-hero {
+      background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      padding: 40px 24px 48px;
+      color: var(--white);
+    }
+    .condition-hero-inner { max-width: 800px; margin: 0 auto; }
+    .condition-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 10px;
+    }
+    .condition-title {
+      font-family: 'Lora', serif; font-size: clamp(26px, 4vw, 38px);
+      font-weight: 600; margin-bottom: 20px;
+    }
+    .condition-overview {
+      font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.85);
+      max-width: 720px;
+    }
+
+    /* ── LAYOUT ── */
+    .page-body { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      align-items: start;
+    }
+    .main-col { min-width: 0; }
+    .side-col { position: sticky; top: 78px; }
+
+    /* ── SECTION CARDS ── */
+    .section-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.5s ease both;
+    }
+    .section-card-title {
+      font-family: 'Lora', serif;
+      font-size: 18px; font-weight: 600;
+      color: var(--blue-dark);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-card-title svg { color: var(--blue-bright); flex-shrink: 0; }
+
+    /* ── VIDEO CARDS ── */
+    .video-card {
+      display: flex; gap: 14px;
+      text-decoration: none; color: var(--text-main);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .video-card:last-child { border-bottom: none; padding-bottom: 0; }
+    .video-card:first-child { padding-top: 0; }
+    .video-card:hover .video-title { color: var(--blue-bright); }
+    .video-thumb {
+      width: 88px; height: 56px; border-radius: 8px;
+      background: var(--blue-dark);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .play-btn {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .video-info { flex: 1; min-width: 0; }
+    .video-title {
+      font-size: 14px; font-weight: 500; line-height: 1.4;
+      margin-bottom: 4px; color: var(--text-main);
+      transition: color 0.2s;
+    }
+    .video-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── RESOURCE CARDS ── */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .resource-card {
+      display: flex; flex-direction: column;
+      padding: 14px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none; color: var(--text-main);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .resource-card:hover {
+      border-color: var(--blue-bright);
+      box-shadow: 0 3px 12px rgba(34,113,195,0.1);
+    }
+    .resource-type-badge {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--blue-bright);
+      margin-bottom: 6px;
+    }
+    .resource-title { font-size: 13px; font-weight: 500; line-height: 1.4; flex: 1; margin-bottom: 8px; }
+    .resource-source { font-size: 11px; color: var(--text-muted); }
+    .resource-arrow {
+      position: absolute; top: 12px; right: 12px;
+      color: var(--text-muted); opacity: 0; transition: opacity 0.2s;
+    }
+    .resource-card:hover .resource-arrow { opacity: 1; }
+
+    /* ── MEDICATIONS ── */
+    .med-list {
+      list-style: none; padding: 0;
+    }
+    .med-list li {
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--blue-pale);
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--text-body);
+    }
+    .med-list li:last-child { margin-bottom: 0; }
+    .empty-note { font-size: 14px; color: var(--text-muted); font-style: italic; }
+
+    /* ── CHECKLISTS ── */
+    .checklist, .call-list { list-style: none; padding: 0; }
+    .checklist li, .call-list li {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text-body); line-height: 1.5;
+    }
+    .checklist li:last-child, .call-list li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--green-bg); border: 1.5px solid var(--green-border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+      color: var(--green-text);
+    }
+    .alert-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--red-bg); border: 1.5px solid var(--red-border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+      color: var(--red-text);
+    }
+
+    /* ── CALL OFFICE CARD ── */
+    .call-card {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .call-card .section-card-title { color: var(--red-text); border-color: var(--red-border); }
+    .call-card .section-card-title svg { color: var(--red-text); }
+    .call-card .call-list li { border-color: var(--red-border); color: #5c1c1c; }
+
+    /* ── SIDEBAR ── */
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .sidebar-title {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .dr-mini { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .dr-mini-photo {
+      width: 48px; height: 48px; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 2px solid var(--border); flex-shrink: 0;
+    }
+    .dr-mini-name { font-size: 14px; font-weight: 500; }
+    .dr-mini-cred { font-size: 12px; color: var(--text-muted); }
+    .phone-link {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 500; color: var(--blue-bright);
+      text-decoration: none; padding: 10px 14px;
+      border: 1.5px solid var(--blue-light);
+      border-radius: 8px; background: var(--blue-pale);
+      margin-bottom: 10px; transition: background 0.2s;
+    }
+    .phone-link:hover { background: var(--blue-light); }
+    .related-link {
+      display: block; font-size: 13px; color: var(--text-body);
+      text-decoration: none; padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.15s;
+    }
+    .related-link:last-child { border-bottom: none; }
+    .related-link:hover { color: var(--blue-bright); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--blue-dark); color: rgba(255,255,255,0.55);
+      padding: 28px 24px; text-align: center; font-size: 13px;
+    }
+    .site-footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-disclaimer {
+      font-size: 12px; color: rgba(255,255,255,0.35);
+      margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .side-col { position: static; }
+      .resource-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All Conditions
+    </a>
+    <a href="tel:+12062236772" class="header-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (206) 223-6772
+    </a>
+  </div>
+</header>
+
+<div class="condition-hero">
+  <div class="condition-hero-inner">
+    <p class="condition-label">Patient Education · Dr. Adam Daily, MD</p>
+    <h1 class="condition-title">PSA Screening</h1>
+    <p class="condition-overview">PSA (Prostate-Specific Antigen) is a protein produced by the prostate gland. A blood test measuring PSA levels is the primary screening tool for prostate cancer. An elevated PSA doesn't automatically mean cancer — infections, BPH, and even vigorous exercise can raise it. However, it gives your doctor important information to track over time. The decision to screen is nuanced and depends on your age, family history, race, and health status. We'll work through what your PSA level means for you specifically.</p>
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="content-grid">
+    <div class="main-col">
+
+      <!-- VIDEOS -->
+      
+      <div class="section-card">
+        <h2 class="section-card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          Recommended Videos
+        </h2>
+        
+        <a href="https://www.youtube.com/watch?v=wuOv7KZJSXU" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb">
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">PSA and prostate cancer screening explained</div>
+            <div class="video-desc">Dr. Eggener covers who should be screened, how PSA is interpreted, what triggers further workup, and the role of MRI.</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=AYnhVhsRYME" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb">
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Transperineal prostate biopsy — patient education</div>
+            <div class="video-desc">If your PSA warrants a biopsy, this video explains the transperineal approach: what to expect before, during, and after.</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=7DRWnK7UZXI" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb">
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Diagnostic prostate MRI — avoiding unnecessary biopsies</div>
+            <div class="video-desc">How an MRI before biopsy improves accuracy and helps avoid unnecessary procedures.</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=5Shl3QxFhwk" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb">
+            <div class="play-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Prostate cancer screening — Al Roker's diagnosis explained</div>
+            <div class="video-desc">Dr. Rena Malik explains PSA screening in accessible terms, including why Black men and those with family history should start screening earlier.</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- RESOURCES -->
+      
+      <div class="section-card">
+        <h2 class="section-card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Recommended Articles &amp; Guides
+        </h2>
+        <div class="resource-grid">
+          
+        <a href="https://jamanetwork.com/journals/jama/fullarticle/2697867" target="_blank" rel="noopener" class="resource-card">
+          <div class="resource-type-badge">Article</div>
+          <div class="resource-title">PSA Screening — JAMA Patient Page</div>
+          <div class="resource-source">JAMA</div>
+          <div class="resource-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+        <a href="https://www.auanet.org/guidelines-and-quality/guidelines/early-detection-of-prostate-cancer-guidelines" target="_blank" rel="noopener" class="resource-card">
+          <div class="resource-type-badge">Guidelines</div>
+          <div class="resource-title">AUA PSA Screening Guidelines Summary</div>
+          <div class="resource-source">AUA</div>
+          <div class="resource-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+        <a href="https://www.radiologyinfo.org/en/info/prostate-mri" target="_blank" rel="noopener" class="resource-card">
+          <div class="resource-type-badge">Guide</div>
+          <div class="resource-title">Prostate MRI — Patient Information</div>
+          <div class="resource-source">RadiologyInfo.org</div>
+          <div class="resource-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+        <a href="https://www.pcf.org/about-prostate-cancer/diagnosis-staging-prostate-cancer/psa-testing/" target="_blank" rel="noopener" class="resource-card">
+          <div class="resource-type-badge">Guide</div>
+          <div class="resource-title">Understanding Your PSA — Prostate Cancer Foundation</div>
+          <div class="resource-source">PCF</div>
+          <div class="resource-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+        </div>
+      </div>
+
+      <!-- MEDICATIONS -->
+      <div class="section-card">
+        <h2 class="section-card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          Common Medications
+        </h2>
+        <p class="empty-note">Medications for this condition are typically managed case-by-case. We will discuss any prescriptions at your visit.</p>
+      </div>
+
+      <!-- PRE-VISIT -->
+      
+      <div class="section-card" style="border-left: 4px solid var(--blue-bright);">
+        <h2 class="section-card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          Before Your Visit
+        </h2>
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Preparing these items will help us make the most of your appointment time.</p>
+        <ul class="checklist">
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Avoid ejaculation for 48 hours before a PSA blood draw — it can temporarily elevate PSA.
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Avoid vigorous cycling or prolonged pressure on the perineum for 48 hours before your draw.
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Bring prior PSA values with dates if done elsewhere — the trend is as important as any single number.
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Note any urinary symptoms, prior prostate biopsies, or family history of prostate or breast cancer.
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              If a biopsy has been recommended, ask about having an MRI first if you haven't had one.
+            </li></ul>
+      </div>
+
+      <!-- POST-VISIT -->
+      
+      <div class="section-card" style="background:var(--green-bg);border-color:var(--green-border);">
+        <h2 class="section-card-title" style="color:var(--green-text);border-color:var(--green-border);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green-text);"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          After Your Visit
+        </h2>
+        <p style="font-size:13px;color:var(--green-text);opacity:0.75;margin-bottom:16px;">Key next steps and what to focus on.</p>
+        <ul class="checklist">
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              If your PSA is normal and no further workup is needed, schedule your next PSA check as directed (typically annually).
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              If a biopsy is recommended, review the MRI and biopsy education videos above before your procedure.
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              After a biopsy: avoid strenuous activity, take all prescribed antibiotics, and watch for fever or difficulty urinating.
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Track your PSA values over time — ask for a copy of each result for your records.
+            </li></ul>
+      </div>
+
+      <!-- CALL OFFICE -->
+      
+      <div class="call-card">
+        <h2 class="section-card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          When to Call the Office
+        </h2>
+        <p style="font-size:13px;color:#7a1e1e;margin-bottom:16px;">Call us at <a href="tel:+12062236772" style="color:var(--red-text);font-weight:500;">(206) 223-6772</a> if you experience any of the following:</p>
+        <ul class="call-list">
+            <li>
+              <span class="alert-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+              After biopsy: fever above 101°F, chills, or difficulty urinating — these may indicate infection and need prompt attention.
+            </li>
+            <li>
+              <span class="alert-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+              Heavy rectal or urinary bleeding after biopsy that doesn't improve within a day.
+            </li>
+            <li>
+              <span class="alert-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+              Questions about a PSA result you received — don't wait if you're anxious about a number.
+            </li></ul>
+      </div>
+
+    </div><!-- end main-col -->
+
+    <!-- SIDEBAR -->
+    <aside class="side-col">
+      <div class="sidebar-card">
+        <p class="sidebar-title">Your Doctor</p>
+        <div class="dr-mini">
+          <img src="../images/headshot.jpg" alt="Dr. Adam Daily, MD" class="dr-mini-photo" />
+          <div>
+            <div class="dr-mini-name">Adam Daily, MD MS</div>
+            <div class="dr-mini-cred">Board Certified Urologist</div>
+            <div class="dr-mini-cred">Virginia Mason Franciscan Health</div>
+          </div>
+        </div>
+        <a href="tel:+12062236772" class="phone-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (206) 223-6772
+        </a>
+        <p style="font-size:12px;color:var(--text-muted);text-align:center;">Virginia Mason Medical Center<br>Seattle, WA &amp; Federal Way, WA</p>
+      </div>
+
+      <div class="sidebar-card">
+        <p class="sidebar-title">Other Conditions</p>
+        <a href="kidney-stones.html" class="related-link">Kidney Stones</a><a href="bph.html" class="related-link">BPH / Enlarged Prostate</a><a href="prostate-cancer.html" class="related-link">Prostate Cancer</a><a href="kidney-cancer.html" class="related-link">Kidney Cancer</a><a href="hematuria.html" class="related-link">Hematuria (Blood in Urine)</a><a href="bladder-cancer.html" class="related-link">Bladder Cancer</a><a href="overactive-bladder.html" class="related-link">Overactive Bladder</a><a href="erectile-dysfunction.html" class="related-link">Erectile Dysfunction</a><a href="low-testosterone.html" class="related-link">Low Testosterone</a><a href="recurrent-utis.html" class="related-link">Recurrent UTIs</a><a href="kidney-cysts.html" class="related-link">Kidney Cysts</a><a href="incontinence.html" class="related-link">Incontinence</a><a href="testicular-cancer.html" class="related-link">Testicular Cancer</a><a href="vasectomy.html" class="related-link">Vasectomy</a><a href="varicocele.html" class="related-link">Varicocele</a>
+      </div>
+    </aside>
+
+  </div><!-- end content-grid -->
+</div><!-- end page-body -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>
+      &copy; <span id="yr"></span> Adam Daily, MD MS &nbsp;·&nbsp;
+      Virginia Mason Franciscan Health &nbsp;·&nbsp;
+      <a href="tel:+12062236772">(206) 223-6772</a> &nbsp;·&nbsp;
+      <a href="../index.html">← All Conditions</a>
+    </p>
+    <p class="footer-disclaimer">
+      These resources are for educational purposes only and supplement — not replace — the guidance of your care team.
+      Always follow the specific instructions given to you by Dr. Daily.
+    </p>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
